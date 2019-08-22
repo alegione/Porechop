@@ -657,7 +657,7 @@ def output_reads(reads, out_format, output, read_type, verbosity, discard_middle
         barcode_files = {}
         barcode_read_counts, barcode_base_counts = defaultdict(int), defaultdict(int)
         for read in reads:
-            barcode_name = read.barcode_call
+            barcode_name = input_filename + '-' + read.barcode_call
             if discard_unassigned and barcode_name == 'none':
                 continue
             if out_format == 'fasta':
@@ -712,7 +712,7 @@ def output_reads(reads, out_format, output, read_type, verbosity, discard_middle
         if verbosity > 0:
             print('Done', flush=True, file=print_dest)
 
-    # Output to all reads to file.
+    # Output all reads to file.
     else:
         if gzipped_out:
             out_filename = 'TEMP_' + str(os.getpid()) + '.fastq'
