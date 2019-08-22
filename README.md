@@ -1,3 +1,6 @@
+NOTE: this version of porechop is identical to the end of life/support porechop, only addition is that your input filename will be added to the barcoded files, so you don't have multiple runs with BC1, BC2, etc.
+
+
 <p align="center"><img src="misc/porechop_logo_knife.png" alt="Porechop" width="600"></p>
 
 Porechop is a tool for finding and removing adapters from [Oxford Nanopore](https://nanoporetech.com/) reads. Adapters on the ends of reads are trimmed off, and when a read has an adapter in its middle, it is treated as chimeric and chopped into separate reads. Porechop performs thorough alignments to effectively find adapters, even at low sequence identity.
@@ -78,7 +81,7 @@ Notes:
 By simply running `make` in Porechop's directory, you can compile the C++ components but not install an executable. The program can then be executed by directly calling the `porechop-runner.py` script.
 
 ```bash
-git clone https://github.com/rrwick/Porechop.git
+git clone https://github.com/alegione/Porechop.git
 cd Porechop
 make
 ./porechop-runner.py -h
