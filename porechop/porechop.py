@@ -657,7 +657,7 @@ def output_reads(reads, out_format, output, read_type, verbosity, discard_middle
         barcode_files = {}
         barcode_read_counts, barcode_base_counts = defaultdict(int), defaultdict(int)
         for read in reads:
-            barcode_name = input_filename + '-' + read.barcode_call
+            barcode_name = os.path.basename(os.path.normpath(input_filename)) + '-' + read.barcode_call
             if discard_unassigned and barcode_name == 'none':
                 continue
             if out_format == 'fasta':
